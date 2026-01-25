@@ -1,4 +1,6 @@
-# APB-Controlled UART IP
+# BusTalk UART
+## APB-Controlled UART Communication IP — Verilog, AMBA APB
+
 
 A memory-mapped UART peripheral designed using Verilog and controlled via AMBA APB bus.
 
